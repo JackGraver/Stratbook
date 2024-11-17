@@ -1,40 +1,89 @@
 /* StratItem CSS */
 .strat-item-container {
-    margin: 10px 0;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background-color: #f9f9f9;
+	margin: 10px 0;
+	padding: 10px;
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	background-color: #f9f9f9;
+}
+
+.strat-item {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.strat-item label {
+	display: block;
+	margin-bottom: 5px;
+}
+
+.strat-item input {
+	padding: 8px;
+	font-size: 14px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+
+button {
+	padding: 10px 20px;
+	font-size: 14px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s ease, transform 0.3s ease;
+	
+	width: 120px;  /* Set a fixed width */
+	height: 40px;  /* Set a fixed height */
+	max-width: 150px;  /* Max width to ensure buttons don't get too wide */
+	max-height: 50px;  /* Max height to prevent excessive height */
+	text-overflow: ellipsis;  /* If text overflows, show ellipsis */
+	white-space: nowrap;  /* Prevent text from wrapping */
+	overflow: hidden;  /* Hide overflowed text */
   }
   
-  .strat-item {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  /* Save button specific styles */
+  button.save {
+	background-color: #4CAF50; /* Green */
+	color: white;
   }
   
-  .strat-item label {
-    display: block;
-    margin-bottom: 5px;
+  button.save:hover {
+	background-color: #45a049;
+	transform: scale(1.05); /* Slight grow effect */
   }
   
-  .strat-item input {
-    padding: 8px;
-    font-size: 14px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+  /* Delete button specific styles */
+  button.delete {
+	background-color: #FF4D4D; /* Red */
+	color: white;
   }
   
-  .strat-item button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+  button.delete:hover {
+	background-color: #ff1a1a;
+	transform: scale(1.05); /* Slight grow effect */
+  }
+
+.success-popup {
+	position: fixed; /* Fixed positioning to keep it in place on the screen */
+	top: 20px;       /* Distance from the top of the screen */
+	right: 20px;     /* Distance from the right of the screen */
+	background-color: #4caf50;  /* Green background */
+	color: white;    /* White text */
+	padding: 10px 20px; /* Some padding for better spacing */
+	border-radius: 5px; /* Rounded corners */
+	font-size: 16px;  /* Font size */
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a shadow to make it stand out */
+	opacity: 0;      /* Initially hidden */
+	animation: fadeIn 1s forwards; /* Fade-in animation */
   }
   
-  .strat-item button:hover {
-    background-color: #0056b3;
+  @keyframes fadeIn {
+	0% {
+	  opacity: 0;
+	}
+	100% {
+	  opacity: 1;
+	}
   }
   
